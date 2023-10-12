@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ZhanHong-11/FIT3179-A2/main/data/Energy_intensity_level.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal"
+    },
+    "y": {
+      "field": "Energy intensity level of primary energy (MJ/$2017 PPP GDP)",
+      "type": "quantitative",
+      "axis": {
+        "tickCount": 5
+      },
+      "title": "Energy intensity level (MJ/$2017 PPP GDP)"
+    },
+    "color": {
+      "field": "Entity",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "Entity",
+        "type": "nominal",
+        "title": "Country"
+      },
+      {
+        "field": "Year",
+        "type": "temporal",
+        "title": "Year"
+      },
+      {
+        "field": "Energy intensity level of primary energy (MJ/$2017 PPP GDP)",
+        "type": "quantitative",
+        "title": "Energy intensity level (MJ/$2017 PPP GDP)"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": true
+      },
+      "encoding": {
+        "size": {
+          "condition": {
+            "param": "select_line",
+            "empty": false,
+            "value": 5
+          },
+          "value": 2
+        }
+      },
+      "params": [
+        {
+          "name": "select_line",
+          "select": {
+            "type": "point",
+            "on": "mouseover",
+            "fields": [
+              "Entity"
+            ]
+          },
+          "bind": "legend"
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true
+      },
+      "encoding": {
+        "size": {
+          "condition": {
+            "param": "select_line",
+            "empty": false,
+            "value": 100
+          },
+          "value": 50
+        }
+      }
+    }
+  ]
+}
