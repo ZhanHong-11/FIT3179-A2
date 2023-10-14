@@ -47,11 +47,13 @@
         "tooltip": [
           {
             "field": "Entity",
-            "type": "nominal"
+            "type": "nominal",
+            "title": "Country"
           },
           {
             "field": "Low-carbon electricity (% electricity)",
-            "type": "quantitative"
+            "type": "quantitative",
+            "title": "Low Carbon Electricity (%)"
           }
         ],
         "fillOpacity": {
@@ -111,7 +113,8 @@
             "tooltip": [
               {
                 "field": "Electricity_Source",
-                "type": "nominal"
+                "type": "nominal",
+                "title": "Source of Electricity"
               },
               {
                 "field": "Value(TWh)",

@@ -1,123 +1,129 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "hconcat": [
-      {
-        "width": 400,
-        "height": 300,
-        "data": {
-          "url": "https://raw.githubusercontent.com/ZhanHong-11/FIT3179-A2/main/data/low_carbon_electricity.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "hconcat": [
+    {
+      "width": 400,
+      "height": 300,
+      "data": {
+        "url": "https://raw.githubusercontent.com/ZhanHong-11/FIT3179-A2/main/data/low_carbon_electricity.csv"
+      },
+      "mark": {
+        "type": "bar",
+        "height": 11,
+        "cornerRadiusEnd": 10,
+        "yOffset": 3
+      },
+      "encoding": {
+        "y": {
+          "field": "Entity",
+          "type": "nominal",
+          "sort": {
+            "field": "Low-carbon electricity (% electricity)",
+            "order": "descending"
+          },
+          "scale": {
+            "padding": 0
+          },
+          "axis": {
+            "domain": false,
+            "ticks": false,
+            "grid": true,
+            "bandPosition": 0,
+            "labelAlign": "left",
+            "labelPadding": -3,
+            "labelBaseline": "middle",
+            "labelOffset": -8,
+            "title": null
+          }
         },
-        "mark": {
-          "type": "bar",
-          "height": 11,
-          "cornerRadiusEnd": 10,
-          "yOffset": 3
+        "x": {
+          "field": "Low-carbon electricity (% electricity)",
+          "type": "quantitative",
+          "axis": {
+            "grid": false
+          },
+          "title": "Percentage of Low Carbon Electricity"
         },
-        "encoding": {
-          "y": {
+        "tooltip": [
+          {
             "field": "Entity",
             "type": "nominal",
-            "sort": {
-              "field": "Low-carbon electricity (% electricity)",
-              "order": "descending"
-            },
-            "scale": {
-              "padding": 0
-            },
-            "axis": {
-              "domain": false,
-              "ticks": false,
-              "grid": true,
-              "bandPosition": 0,
-              "labelAlign": "left",
-              "labelPadding": -3,
-              "labelBaseline": "middle",
-              "labelOffset": -8,
-              "title": null
-            }
+            "title": "Country"
           },
-          "x": {
+          {
             "field": "Low-carbon electricity (% electricity)",
             "type": "quantitative",
-            "axis": {
-              "grid": false
-            },
-            "title": "Percentage of Low Carbon Electricity"
-          },
-          "tooltip": [
-            {
-              "field": "Entity",
-              "type": "nominal",
-              "title": "Country"
-            },
-            {
-              "field": "Low-carbon electricity (% electricity)",
-              "type": "quantitative",
-              "title": "Low Carbon Electricity (%)"
-            }
-          ],
-          "fillOpacity": {
-            "condition": {
-              "param": "selectedCountry",
-              "value": 1
-            },
-            "value": 0.3
-          }
-        },
-        "params": [
-          {
-            "name": "selectedCountry",
-            "select": {
-              "type": "point",
-              "on": "click",
-              "fields": [
-                "Entity"
-              ]          } 
-          }
-        ]
-      },
-      {
-        "width": 250,
-        "height": 300,
-        "data": {
-          "url": "https://raw.githubusercontent.com/ZhanHong-11/FIT3179-A2/main/data/source_of_electricity.csv"
-        },
-        "transform": [
-          {
-            "filter": {
-              "param": "selectedCountry"
-            }
+            "title": "Low Carbon Electricity (%)"
           }
         ],
-        "mark": {
-          "type": "arc",
-          "innerRadius": 50
-        },
-        "encoding": {
-          "theta": {
-            "field": "Value(TWh)",
-            "type": "quantitative"
+        "fillOpacity": {
+          "condition": {
+            "param": "selectedCountry",
+            "value": 1
           },
-          "color": {
+          "value": 0.3
+        }
+      },
+      "params": [
+        {
+          "name": "selectedCountry",
+          "value": "Malaysia",
+          "select": {
+            "type": "point",
+            "on": "click",
+            "fields": [
+              "Entity"
+            ]          
+          } 
+        }
+      ]
+    },
+    {
+      "width": 250,
+      "height": 300,
+      "data": {
+        "url": "https://raw.githubusercontent.com/ZhanHong-11/FIT3179-A2/main/data/source_of_electricity.csv"
+      },
+      "transform": [
+        {
+          "filter": {
+            "param": "selectedCountry"
+          }
+        }
+      ],
+      "mark": {
+        "type": "arc"
+      },
+      "encoding": {
+        "theta": {
+          "field": "Value(TWh)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Electricity_Source",
+          "type": "nominal",
+          "legend": {
+            "orient": "bottom",
+            "title": null
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Entity",
+            "type": "nominal",
+            "title": "Country"
+          },
+          {
             "field": "Electricity_Source",
             "type": "nominal",
-            "legend": {
-              "orient": "bottom",
-              "title": null
-            }
+            "title": "Source of Electricity"
           },
-          "tooltip": [
-            {
-              "field": "Electricity_Source",
-              "type": "nominal",
-              "title": "Source of Electricity"
-            },
-            {
-              "field": "Value(TWh)",
-              "type": "quantitative"
-            }
-          ]
-        }
+          {
+            "field": "Value(TWh)",
+            "type": "quantitative"
+          }
+        ]
       }
-    ]
-  }
+    }
+  ]
+}
