@@ -61,7 +61,7 @@
           "name": "select_line",
           "select": {
             "type": "point",
-            "on": "mouseover",
+            "on": "click",
             "fields": [
               "Entity"
             ]
