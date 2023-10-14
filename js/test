@@ -1,0 +1,146 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "hconcat": [
+    {
+      "width": 400,
+      "height": 300,
+      "data": {
+        "url": "https://raw.githubusercontent.com/ZhanHong-11/FIT3179-A2/main/data/low_carbon_electricity.csv"
+      },
+      "mark": {
+        "type": "bar",
+        "height": 11,
+        "cornerRadiusEnd": 10,
+        "yOffset": 3
+      },
+      "encoding": {
+        "y": {
+          "field": "Entity",
+          "type": "nominal",
+          "sort": {
+            "field": "Low-carbon electricity (% electricity)",
+            "order": "descending"
+          },
+          "scale": {
+            "padding": 0
+          },
+          "axis": {
+            "domain": false,
+            "ticks": false,
+            "grid": true,
+            "bandPosition": 0,
+            "labelAlign": "left",
+            "labelPadding": -3,
+            "labelBaseline": "middle",
+            "labelOffset": -8,
+            "title": null
+          }
+        },
+        "x": {
+          "field": "Low-carbon electricity (% electricity)",
+          "type": "quantitative",
+          "axis": {
+            "grid": false
+          },
+          "title": "Percentage of Low Carbon Electricity"
+        },
+        "tooltip": [
+          {
+            "field": "Entity",
+            "type": "nominal"
+          },
+          {
+            "field": "Low-carbon electricity (% electricity)",
+            "type": "quantitative"
+          }
+        ],
+        "fillOpacity": {
+          "condition": {
+            "param": "selectedCountry",
+            "value": 1
+          },
+          "value": 0.3
+        }
+      },
+      "params": [
+        {
+          "name": "selectedCountry",
+          "value": "Malaysia",
+          "select": {
+            "type": "point",
+            "on": "click",
+            "fields": [
+              "Entity"
+            ]
+          } 
+        }
+      ]
+    },
+    {
+      "width": 250,
+      "height": 300,
+      "data": {
+        "url": "https://raw.githubusercontent.com/ZhanHong-11/FIT3179-A2/main/data/source_of_electricity.csv"
+      },
+      "layer": [
+        {
+          "transform": [
+            {
+              "filter": {
+                "param": "selectedCountry"
+              }
+            }
+          ],
+          "mark": {
+            "type": "arc",
+            "innerRadius": 75
+          },
+          "encoding": {
+            "theta": {
+              "field": "Value(TWh)",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "Electricity_Source",
+              "type": "nominal",
+              "legend": {
+                "orient": "bottom",
+                "title": null
+              }
+            },
+            "tooltip": [
+              {
+                "field": "Electricity_Source",
+                "type": "nominal"
+              },
+              {
+                "field": "Value(TWh)",
+                "type": "quantitative"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": {
+                "param": "selectedCountry"
+              }
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline":"middle"
+          },
+          "encoding": {
+            "text": {
+              "field": "Entity",
+              "type": "nominal"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
