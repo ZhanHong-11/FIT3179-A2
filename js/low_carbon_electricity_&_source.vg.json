@@ -73,7 +73,8 @@
             "on": "click",
             "fields": [
               "Entity"
-            ]          
+            ],
+            "clear": false
           } 
         }
       ]
@@ -84,46 +85,78 @@
       "data": {
         "url": "https://raw.githubusercontent.com/ZhanHong-11/FIT3179-A2/main/data/source_of_electricity.csv"
       },
-      "transform": [
+      "layer": [
         {
-          "filter": {
-            "param": "selectedCountry"
+          "transform": [
+            {
+              "filter": {
+                "param": "selectedCountry"
+              }
+            }
+          ],
+          "mark": {
+            "type": "arc",
+            "innerRadius": 75
+          },
+          "encoding": {
+            "theta": {
+              "field": "Value(TWh)",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "Electricity_Source",
+              "type": "nominal",
+              "legend": {
+                "orient": "bottom",
+                "title": null
+              }
+            },
+            "tooltip": [
+              {
+                "field": "Electricity_Source",
+                "type": "nominal",
+                "title": "Source of Electricity"
+              },
+              {
+                "field": "Value(TWh)",
+                "type": "quantitative"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": {
+                "param": "selectedCountry"
+              }
+            },
+            {
+              "aggregate": [
+                {
+                  "op": "distinct",
+                  "field": "Entity",
+                  "as": "Counter"
+                }
+              ]
+            },
+            {
+              "calculate": "datum.Counter == 1 ? selectedCountry.Entity : 'Select a Country'",
+              "as": "description"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline":"middle"
+          },
+          "encoding": {
+            "text": {
+              "field": "description"
+            }
           }
         }
-      ],
-      "mark": {
-        "type": "arc"
-      },
-      "encoding": {
-        "theta": {
-          "field": "Value(TWh)",
-          "type": "quantitative"
-        },
-        "color": {
-          "field": "Electricity_Source",
-          "type": "nominal",
-          "legend": {
-            "orient": "bottom",
-            "title": null
-          }
-        },
-        "tooltip": [
-          {
-            "field": "Entity",
-            "type": "nominal",
-            "title": "Country"
-          },
-          {
-            "field": "Electricity_Source",
-            "type": "nominal",
-            "title": "Source of Electricity"
-          },
-          {
-            "field": "Value(TWh)",
-            "type": "quantitative"
-          }
-        ]
-      }
+      ]
     }
   ]
 }
