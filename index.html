@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Renewable Energy | FIT3179-W10 Data Visualisation Project</title>
+  <title>Renewable Energy | Monash University FIT3179-A2 Data Visualisation Project</title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -31,15 +31,16 @@
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <h1>Renewable Energy</h1>
-        <p>Renewable energy is the energy that comes from natural sources that are constantly replenished, such as wind,
-          water, sunlight, and geothermal heat. Renewable energy can provide clean, reliable and affordable electricity
-          for various purpose such as cooking, lighting and heating. According to the International Renewable Energy
-          Agency (IRENA), renewable energy sources accounted for 28.4% of the global electricity generation in 2021,
-          up from 26.4% in 2020. However, the pace of renewable energy deployment varies across regions and countries,
-          depending on the availability of resources, the level of policy support, the cost of technologies, and the
-          existing infrastructure. In this visualisation, we will explore more about the renewable energy and its
-          sustainability.
+        <h1 class="title-main">Renewable Energy</h1>
+        <p><b>Renewable energy</b>, which harnesses the power of natural and inexhaustible sources such as sunlight,
+          wind and water, plays a vital role in addressing some of the most urgent environmental issues that we face in
+          the present day, including <b>global warming</b> caused by <b>greenhouse gas emissions</b>, the vulnerability
+          of <b>energy supply</b> and stability due to dependence on <b>finite resources</b>. According to International
+          Renewable Energy Agency (IRENA), renewable energy sources accounted for <b>28.4%</b> of the <b>global
+            electricity generation</b> in <b>2021</b>. However, the pace of renewable energy deployment varies across
+          regions and countries, depending on the availability of resources, the level of policy support, the cost of
+          technologies, and the existing infrastructure. This visualisation will explore more about <b>renewable
+            energy</b> and the <b>sustainability</b>.
         </p>
       </div>
     </div>
@@ -48,14 +49,13 @@
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <h2>2020 Global Electricity Accessibility per Country Population</h2>
-        <div id="vis1" class="vis-container"></div>
+        <div id="vis1" class="vis-1-container"></div>
       </div>
       <div class="pure-u-1-1">
-        <p>In year 2020, most of the countries around the world had reached an average of electricity accessibility
-          above 80% of their population. However, there are still some countries that have less than 50% of their
-          population, which mainly located in Africa. This may be due to the lack of infrastructure and poor
-          technologies.
+        <p>In <b>2020</b>, most of the countries around the world had reached an average of electricity accessibility
+          <b>above 80%</b> of their population. However, there are still some countries that have <b>less than 50%</b>
+          of their population, which mainly located in <b>Africa</b>. This may be due to the lack of infrastructure and
+          poor technologies.
         </p>
       </div>
     </div>
@@ -63,25 +63,142 @@
 
     <!-- pure grid group -->
     <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h2>Renewable Energy Share vs CO2 emissions per Country (2000-2019)</h2>
-        <p>The emissions of CO2 is crucial to the environment as it is one of the main greenhouse gases that contribute
-          to global warming. Some studies believe that increasing the share of renewable energy can lead to lower CO2
-          emissions. However, the development of the countries and economic structure are also important as they affect
-          the energy demand, supply, and efficiency of each country. The chart below shows the relationship between the
-          share of renewable energy, CO2 emissions, and the country's GDP per capita from year 2000 to 2019.
-        </p>
+      <div class="pure-u-2-3">
+        <div class="description description-left">
+          <h2 class="title-sub">Global Overview of Electricity Source</h2>
+          <div id="vis2" class="vis-container"></div>
+        </div>
       </div>
-      <div class="pure-u-1-1">
-        <div id="vis2" class="vis-container"></div>
+      <div class="pure-u-1-3">
+        <div class = "description-box">
+          <h2 class="title-sub-sub"><font color="#6d4b4b">~ Oceania</font></h2>
+            <p><b><font color="#6d4b4b">Oceania</font></b> is the <b>only</b> continent that have <b>NO</b> country using <b><font color="#F0BA32">nuclear</font></b> power to generate electricity.</p>
+          <h2 class="title-sub-sub"><font color="#ff7f00">~ Europe</font></h2>
+            <p><b><font color="#ff7f00">Europe</font></b> is the continent that use the <b>most <font color="#F0BA32">nuclear</font></b> power for generating electricity. It has 132 nuclear reactor with a total energy generation of 876,244 GWh which accounted for 25.6% of the electricity production and 9.8% of the total energy supply in 2021.</p>
+          <h2 class="title-sub-sub"><font color="#6cd4c5">~ Africa</font></h2>
+            <p>The only country in <b><font color="#6cd4c5">Africa</font></b> that has nuclear power is <b>South Africa</b>. It has only <b>2</b> nuclear reactors which are located at the Koeberg nuclear power station, providing around <b>5%</b> of the electricity production of the country.</p>
+          </div>
       </div>
     </div>
     <!-- end pure grid group -->
 
+    <!-- pure grid group -->
     <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="vis3" class="vis-1-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="text-box">
+          <div class="description description-left">
+            <img src="img/fossil_fuel_img.jpeg" alt="fossil" class="img-fossil">
+            <h2><b>
+                <font color="#a65628">Fossil Fuel</font>
+              </b></h2>
+            <p><b>United Arab Emirates (UAE)</b> has most of its electricity geenerated by <b>
+                <font color="#a65628">fossil fuel</font>
+              </b>. It is considered as one of the country containing the <b>MOST</b> natural gas reserves in the world.
+              The <b>UAE</b> accounts for about <b>3%</b> of the world's total natural gas reserves. However, it plans
+              to generate half of its electrical energy from <b>solar</b> and <b>
+                <font color="#F0BA32">nuclear</font>
+              </b> by <b>2025</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="text-box">
+          <img src="img/nuclear_img.jpeg" alt="nuclear" class="img-nuclear">
+          <h2><b>
+              <font color="#F0BA32">Nuclear</font>
+            </b></h2>
+          <p><b>United States (US)</b> is the country that use the <b>MOST <font color="#F0BA32">nuclear</font></b>
+            power to produce electricity. According to the International Atomic Energy Agency, <b>France</b> is the
+            <b>third</b> highest <b>
+              <font color="#F0BA32">nuclear</font>
+            </b> power
+            electricity user in 2020. Meanwhile, <b>France</b> is in the <b>top</b> place when it comes to the
+            <b>share</b> of <b>
+              <font color="#F0BA32">nuclear</font>
+            </b> power electricity in total electricity generation for the whole country. About
+            <b>60%</b> of the country's electricity is produced by <b>
+              <font color="#F0BA32">nuclear</font>
+            </b> power.
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-1-3" style="width: 31.5%;">
+        <div class="text-box">
+          <img src="img/renewable_img.jpeg" alt="renewable" class="img-renewable">
+          <h2>
+            <font color="#4daf4a">Renewable Energy</font>
+          </h2>
+          <p><b>Iceland</b> and <b>Nepal</b> both achieve a <b>100%</b> source of electricity comes from <b>
+              <font color="#4daf4a">renewable energy</font>
+            </b>.
+            <b>Iceland</b> is full of cheap <b>
+              <font color="#4daf4a">renewable energy</font>
+            </b> such as <b>hydropower</b> and <b>geothermal</b>. Meanwhile, <b>Nepal</b> is a landlocked country in
+            Himalayas with abundant <b>hydropower</b> potential. The unique natural conditions of these two countries is
+            the main reason why they are able to generate electricity <b>100%</b> from <b>
+              <font color="#4daf4a">renewable energy</font>
+            </b>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2 class="title-sub">Renewable Energy Share vs. CO2 Emission</h2>
+        <p>The emissions of <b>CO2</b> is crucial to the environment as it is one of the main <b>greenhouse gases</b>
+          that contribute to global warming. Studies believe that <b>increasing</b> the share of <b>renewable energy</b>
+          can lead to <b>lower CO2</b> emissions. However, the development of the countries and economic structure may
+          affect the energy demand, supply, and efficiency of each country. The chart below shows the relationship
+          between the <b>share of renewable energy</b>, <b>CO2 emissions</b>, and the <b>country's GDP per capita</b>
+          from <b>2000</b> to <b>2019</b>.
+        </p>
+      </div>
+      <div class="pure-u-1-1">
+        <div id="vis4" class="vis-1-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2 class="title-sub">Analyzing the Trends in Energy Intensity Level across Top 20 GDP Countries: A Heatmap
+          Analysis</h2>
+        <p><b>Energy intensity level</b> is a measure of how much energy is used to produce <b>one unit</b> of
+          <b>economic output</b>. This measure is important for tracking improvements in the <b>energy efficiency</b> of
+          an economy over time.
+        </p>
+        <div id="vis5" class="vis-1-container"></div>
+      </div>
+      <div class="pure-u-1-1">
+        <p><b>Iceland</b> has a relative <b>HIGH</b> energy intensity level, indicating that the country's <b>GDP</b> is
+          highly relies on energy consumption. On the other hand, countries like <b>Switzerland</b> and
+          <b>Ireland</b> has very <b>LOW</b> energy intensity level. However, it does not necessarily imply that
+          <b>Iceland</b> is inefficient or wasteful in its energy use, but rather that it has different energy needs and
+          opportunities than other countries.
+        </p>
+        </p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <div class="last-g">
       <div class="pure-u-1-1 small-font">
-        <p>This visualisation is created by <a href="https://github.com/ZhanHong-11/FIT3179-W10" target="_blank">Zhan
-            Hong</a>. The datasource is obtained from <a href="https://www.kaggle.com/datasets/anshtanwar/global-data-on-sustainable-energy?select=global-data-on-sustainable-energy+%281%29.csv"
+        <p>*This visualisation is created by <a href="https://github.com/ZhanHong-11/FIT3179-W10" target="_blank">Zhan
+            Hong</a>. The datasource is obtained from <a
+            href="https://www.kaggle.com/datasets/anshtanwar/global-data-on-sustainable-energy?select=global-data-on-sustainable-energy+%281%29.csv"
             target=" _blank">Global Data on Sustainable Energy (2000-2020) | Kaggle</href>.
         </p>
       </div>
@@ -92,13 +209,28 @@
 
   <script type="text/javascript">
     var specVis1 = "js/choropleth_map.vg.json";
-    var specVis2 = "js/bubbleplot_CO2_emission.vg.json";
+    var specVis2 = "js/global_source_of_electricity.vg.json";
+    var specVis3 = "js/low_carbon_electricity_&_source.vg.json";
+    var specVis4 = "js/bubbleplot_CO2_emission.vg.json";
+    var specVis5 = "js/heatmap.vg.json";
 
     vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
     vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   </script>
