@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 600,
+  "width": 550,
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/ZhanHong-11/FIT3179-A2/main/data/region_total_electricty_source.csv"
@@ -60,7 +60,7 @@
     "color": {
       "field": "Electricity_source",
       "type": "nominal",
-      "title": "Source of Electricity",
+      "title": null,
       "scale": {
         "domain": [
           "Fossil Fuel",
@@ -70,8 +70,13 @@
         "range": [
           "#a65628",
           "#4daf4a",
-          "#F0BA32 "
+          "#F0BA32"
         ]
+      },
+      "legend": {
+        "orient": "top",
+        "labelFontSize": 15,
+        "titleFontSize": 15
       }
     },
     "stroke": {
