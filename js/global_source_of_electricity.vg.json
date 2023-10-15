@@ -47,7 +47,8 @@
       "field": "Year",
       "type": "temporal",
       "axis": {
-        "grid": false
+        "grid": false,
+        "tickCount": 10
       }
     },
     "y": {
@@ -60,6 +61,9 @@
       "field": "Electricity_source",
       "type": "nominal",
       "title": "Source of Electricity"
+    },
+    "stroke": {
+      "value": "black"
     },
     "order": {
       "field": "order",
