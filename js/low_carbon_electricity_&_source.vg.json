@@ -110,7 +110,8 @@
               "type": "nominal",
               "legend": {
                 "orient": "bottom",
-                "title": null
+                "title": null,
+                "labelFontSize": 10
               },
               "scale": {
                 "domain": [
