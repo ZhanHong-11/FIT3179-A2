@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "hconcat": [
     {
-      "width": 400,
+      "width": 700,
       "height": 300,
       "data": {
         "url": "https://raw.githubusercontent.com/ZhanHong-11/FIT3179-A2/main/data/low_carbon_electricity.csv"
@@ -11,7 +11,8 @@
         "type": "bar",
         "height": 11,
         "cornerRadiusEnd": 10,
-        "yOffset": 3
+        "yOffset": 3,
+        "color": "#dcbb9c"
       },
       "encoding": {
         "y": {
@@ -40,9 +41,10 @@
           "field": "Low-carbon electricity (% electricity)",
           "type": "quantitative",
           "axis": {
-            "grid": false
+            "grid": false,
+            "tickCount": 10
           },
-          "title": "Percentage of Low Carbon Electricity"
+          "title": "Percentage of Low-Carbon Electricity (%)"
         },
         "tooltip": [
           {
@@ -109,6 +111,18 @@
               "legend": {
                 "orient": "bottom",
                 "title": null
+              },
+              "scale": {
+                "domain": [
+                  "Electricity from fossil fuels (TWh)",
+                  "Electricity from renewables (TWh)",
+                  "Electricity from nuclear (TWh)"
+                ],
+                "range": [
+                  "#a65628",
+                  "#4daf4a",
+                  "#f0ba32 "
+                ]
               }
             },
             "tooltip": [

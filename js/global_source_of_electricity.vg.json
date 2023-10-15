@@ -60,7 +60,19 @@
     "color": {
       "field": "Electricity_source",
       "type": "nominal",
-      "title": "Source of Electricity"
+      "title": "Source of Electricity",
+      "scale": {
+        "domain": [
+          "Fossil Fuel",
+          "Renewable Energy",
+          "Nuclear"
+        ],
+        "range": [
+          "#a65628",
+          "#4daf4a",
+          "#F0BA32 "
+        ]
+      }
     },
     "stroke": {
       "value": "black"
