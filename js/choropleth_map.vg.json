@@ -110,7 +110,7 @@
           {
             "field": "Access to electricity (% of population)",
             "type": "quantitative",
-            "title": "Access to electricity (%)"
+            "title": "Electricity Accessibility (%)"
           }
         ],
         "fillOpacity": {
