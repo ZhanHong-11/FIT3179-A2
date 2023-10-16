@@ -8,7 +8,7 @@
   },
   "hconcat": [
     {
-      "width": 700,
+      "width": 600,
       "height": 300,
       "data": {
         "url": "https://raw.githubusercontent.com/ZhanHong-11/FIT3179-A2/main/data/low_carbon_electricity.csv"
@@ -89,7 +89,7 @@
       ]
     },
     {
-      "width": 250,
+      "width": 300,
       "height": 300,
       "data": {
         "url": "https://raw.githubusercontent.com/ZhanHong-11/FIT3179-A2/main/data/source_of_electricity.csv"
@@ -180,5 +180,10 @@
         }
       ]
     }
-  ]
+  ],
+  "config": {
+    "concat": {
+      "spacing": 60
+    }
+  }
 }
